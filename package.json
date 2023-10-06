@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "serve": "ts-node-dev src/app.ts",
     "dev": "ts-node-dev --no-notify --transpile-only src/app.ts",
     "build": "rm -rf dist && tsc",
     "start": "npm run build && node dist/index.js",

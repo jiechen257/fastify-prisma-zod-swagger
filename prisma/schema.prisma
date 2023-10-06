@@ -10,15 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id       Int       @id @default(autoincrement())
-  email    String    @unique
-  name     String?   @db.VarChar(64)
-  password String    @db.VarChar(256)
-  salt     String
-  products Product[]
-}
-
 model Product {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
@@ -26,6 +17,4 @@ model Product {
   title     String   @db.VarChar(128)
   content   String?
   price     Float
-  owner     User     @relation(fields: [ownerId], references: [id])
-  ownerId   Int
 }
